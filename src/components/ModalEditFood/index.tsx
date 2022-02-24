@@ -7,7 +7,7 @@ import Input from '../Input';
 
 interface modalEditFood{
   setIsOpen: ()=>void;
-  handleUpdateFood: (data: [])=>void;
+  handleUpdateFood: (data: any)=>void;
   editingFood: ()=>void;
   isOpen: boolean;
 }
@@ -16,14 +16,14 @@ function ModalEditFood({ setIsOpen, handleUpdateFood, editingFood, isOpen }: mod
   
   const formRef = createRef()
   
-  const handleSubmit = async (data: []) => {
+  const handleSubmit = async (data: any) => {
     handleUpdateFood(data);
     setIsOpen();
   };
 
     return (
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-        <Form ref={formRef} onSubmit={handleSubmit} initialData={editingFood}>
+        <Form ref={formRef.current} onSubmit={handleSubmit} initialData={editingFood}>
           <h1>Editar Prato</h1>
           <Input name="image" placeholder="Cole o link aqui" />
 

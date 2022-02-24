@@ -12,7 +12,7 @@ import { Container } from './styles';
 interface inputProps {
   name: string;
   icon?: any;
-  placeholder: text
+  placeholder?: string;
 }
 
 interface inputRefProps{
@@ -36,7 +36,7 @@ const Input = ({ name, icon: Icon, placeholder}: inputProps, {...rest}) => {
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
 
-    setIsFilled(!!inputRef.current?.current.value);
+    setIsFilled(!!inputRef.current?.current?.value);
   }, []);
 
   useEffect(() => {

@@ -24,6 +24,7 @@ export const Container = styled.div`
           display: flex;
           flex-direction: row;
           align-items: center;
+          cursor: pointer;
 
           .text {
             padding: 16px 24px;

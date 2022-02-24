@@ -21,7 +21,7 @@ export default function Dashboard() {
   const [foods, setFoods] = useState<foodsProps []>([]);
   const [editingFood, setEditingFood] = useState<any>({});
   const [modalOpen, setModalOpen] = useState(false);
-  const [editModalOpen, setEditModalOpen] = useState([]);
+  const [editModalOpen, setEditModalOpen] = useState(false);
 
   useEffect(()=>{
     const loadFoods = async()=>{
@@ -76,11 +76,11 @@ export default function Dashboard() {
   }
 
   const toggleModal = () => {
-    modalOpen: !modalOpen
+    setModalOpen(!modalOpen)
   }
 
   const toggleEditModal = () => {
-     editModalOpen: !editModalOpen 
+    setEditModalOpen(!editModalOpen)
   }
 
   const handleEditFood = (food: foodsProps) => {
